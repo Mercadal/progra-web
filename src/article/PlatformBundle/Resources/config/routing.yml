@@ -1,0 +1,36 @@
+article_platform_blog2:
+    resource: "@articlePlatformBundle/Resources/config/routing/blog.yml"
+    prefix:   /blog1
+
+article_platform_homepage:
+    path:     /
+    defaults: { _controller: articlePlatformBundle:Blog:index }
+
+article_platform_newart:
+    path:     /blog
+    defaults: { _controller: articlePlatformBundle:Blog:new }
+    requirements:
+        _method:  GET
+
+article_platform_layout:
+    path:     /layout
+    defaults: { _controller: articlePlatformBundle:Advert:layout }
+    requirements:
+        _method:  GET
+
+
+article_platform_view:
+    path:      /advert/{id}
+    defaults:  { _controller: articlePlatformBundle:Advert:view }
+
+
+article_platform_add:
+    path:      /add
+    defaults:  { _controller: articlePlatformBundle:Advert:add }
+
+
+article_platform_about:
+    pattern:  /about
+    defaults:  { _controller: articlePlatformBundle:Advert:about }
+    requirements:
+        _method:  GET

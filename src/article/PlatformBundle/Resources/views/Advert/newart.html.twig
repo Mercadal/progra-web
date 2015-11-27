@@ -1,0 +1,96 @@
+{# src/Blogger/BlogBundle/Resources/views/Advert/newart.html.twig #}
+
+{% extends '::base.html.twig' %}
+
+
+  {% block body -%}
+        <section id="wrapper">
+
+            <header id="header">
+
+                <div class="top">
+
+
+                </div>
+
+
+
+
+                <hgroup>
+                   
+            <h2>{% block blog_title %}<a href="{{ path('article_platform_homepage') }}">Blogueur en Séries </a>{% endblock %}</h2>
+
+                </hgroup>
+
+
+            </header>
+
+
+        <html lang=fr>
+
+
+<!-- Formulaire -->
+
+<body>
+
+<div class="container">
+  <h3>Ajouter un article</h3>
+
+  <form class="form-horizontal" role="form">
+
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Votre Pseudonyme</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" placeholder="Entrer un Email">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Rentrer votre article</label>
+      <div class="col-sm-10">          
+        <input type="article" class="form-control" id="artcl" placeholder="Entrer un article">
+      </div>
+    </div>
+
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox"> se souvenir de moi</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Soumettre</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+        {% block javascripts %}
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+            <script src="{{ asset('bundles/articlePlatform/js/example.js') }}"></script>
+
+        {% endblock %}
+
+
+
+            {% endblock -%}
+

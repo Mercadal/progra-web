@@ -1,0 +1,316 @@
+<?php
+// src/article/PlatformBundle/Entity/Blog.php
+
+namespace article\PlatformBundle\Entity;
+
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="blog")
+ */
+class Blog
+{
+
+    // ... Code de votre entité d'utilisateur
+    
+
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $title;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $author;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    protected $blog;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $image;
+
+
+        /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $updated;
+
+    /**
+     * @Assert\File(maxSize="500k")
+     */
+    protected $file;
+
+
+
+
+
+
+
+
+
+    public function getWebPath()
+    {
+        return null === $this->pictureName ? null : $this->getUploadDir().'/'.$this->pictureName;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // le chemin absolu du répertoire dans lequel sauvegarder les photos de profil
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
+        return 'uploads/pictures';
+    }
+
+    public function uploadProfilePicture()
+    {
+        // Nous utilisons le nom de fichier original, donc il est dans la pratique
+        // nécessaire de le nettoyer pour éviter les problèmes de sécurité
+
+        // move copie le fichier présent chez le client dans le répertoire indiqué.
+        $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());
+
+        // On sauvegarde le nom de fichier
+        $this->pictureName = $this->file->getClientOriginalName();
+
+        // La propriété file ne servira plus
+        $this->file = null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    protected $comments = array();
+
+
+   /* public function addComment(Comment $comment)
+    {
+        $this->comments[] = $comment;
+    }
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+   public function setComments()
+    {
+        return $this->comments;
+    }
+*/
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Blog
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set author
+     *
+     * @param string $author
+     *
+     * @return Blog
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set blog
+     *
+     * @param string $blog
+     *
+     * @return Blog
+     */
+    public function setBlog($blog)
+    {
+        $this->blog = $blog;
+
+        return $this;
+    }
+
+    /**
+     * Get blog
+     *
+     * @return string
+     */
+    public function getBlog()
+    {
+        return $this->blog;
+    }
+
+    /**
+     * Set file
+     *
+     * @param array $file
+     *
+     * @return File
+     */
+    public function setFichier($file)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return string
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Blog
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     *
+     * @return Blog
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     *
+     * @return Blog
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+
+
+}

@@ -1,0 +1,8 @@
+guillaume_blog:
+    resource: "@GuillaumeBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+article_platform:
+    resource: "@articlePlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+
