@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8568613b-752b-4e46-8b34-43bd738c7818" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/parquet.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Controller/AdvertController.php" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Controller/AdvertController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Entity/Blog.php" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Entity/Blog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Form/BlogType.php" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Form/BlogType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/public/css/screen.css" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/public/css/screen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Advert/about.html.twig" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Advert/about.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/edit.html.twig" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/index.html.twig" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/new.html.twig" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/show.html.twig" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/show.html.twig" />
-    </list>
+    <list default="true" id="8568613b-752b-4e46-8b34-43bd738c7818" name="Default" comment="" />
     <ignored path="project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
