@@ -45,13 +45,6 @@ class Blog
 
 
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $image;
-
-
-
 
         /**
      * @ORM\Column(type="datetime")
@@ -68,15 +61,55 @@ class Blog
 
 
 
-    /**
-     * @Assert\file(maxSize="500k")
-     */
-    protected $file;
-
-
 
 
     protected $comments = array();
+
+
+
+
+
+
+
+
+
+
+    /**
+     * @Assert\file(maxSize="500k")
+     */
+    public $file;
+
+    public function getWebPath()
+    {
+        return null === $this->file ? null : $this->getUploadDir().'/'.$this->file;
+    }
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        return '/images';
+    }
+
+    public function uploadfile()
+    {
+        $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());
+        $this->file = $this->file->getClientOriginalName();
+        $this->file = null;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -206,7 +239,7 @@ class Blog
     /**
      * Get file
      *
-     * @return string
+     * @return file
      */
     public function getfile()
     {
@@ -214,34 +247,6 @@ class Blog
     }
 
 
-
-
-
-
-
-    /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return Blog
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
 
 
 

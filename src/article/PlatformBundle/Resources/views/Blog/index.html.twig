@@ -2,34 +2,22 @@
 
 
 
-{% block head %}
 
-    <title>Blogueur en Séries</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('bundles/articleplatform/css/article.css') }}" >
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <style>
-        .carousel-inner > .item > img,
-        .carousel-inner > .item > a > img {
-            width: 45%;
-            margin: auto;
-        }
-    </style>
+{% block body %}
 
 
 
-{% endblock %}
+    <h1>Bienvenue sur notre blog</h1>
 
-{% block body -%}
+
+    <p>Dans ce blog vous pourrez découvrir les séries qui vous correspondent, de nouveaux genres, mais aussi des séries dont peu de gens connaissent l'existence, mais qui font l'unanimité chez les internautes! </p>
+
+
+
     <h1>Notre sélection</h1>
 
 
-    <ul>
+    <ul style="margin-top: 10px;">
         <li>
             <a href="{{ path('blog_new') }}">
                 <h3>Créer un article...</h3>
@@ -37,33 +25,50 @@
         </li>
     </ul>
 
-    <table class="records_list">
+
+
+
+
+
+    <table class="table table-responsive" style="margin-top: 10px;">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Blog</th>
-                <th>File</th>
-                <th>Image</th>
-                <th>Created</th>
-                <th>Updated</th>
+                <th>A l'image</th>
+                <th>Titre</th>
+                <th>Auteur de l'article</th>
+                <th>Nos articles</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
-            <tr>
 
-                <td>{{ entity.id }}</td>
-                <td>{{ entity.title }}</td>
-                <td>{{ entity.author }}</td>
-                <td>{{ entity.blog }}</td>
+
+            <tr>
+        <div class="container-fluid">
+            <div class="table-responsive">
+
+
                 <td>{{ entity.file }}</td>
 
-                <td>{{ entity.image }}</td>
-                <td>{% if entity.created %}{{ entity.created|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if entity.updated %}{{ entity.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
+
+
+
+
+
+                <td>{{ entity.title }}</td>
+
+
+
+                <td>{{ entity.author }}</td>
+
+
+
+                <td>{{ entity.blog }}</td>
+
+
+
+
                 <td>
                 <ul>
                     <li>
@@ -74,10 +79,40 @@
                     </li>
                 </ul>
                 </td>
+        </div>
+        </div>
             </tr>
+
         {% endfor %}
         </tbody>
     </table>
 
-    </ul>
+
+
+
+
+     <footer class="row">
+
+
+  <div class="container">
+
+<ul class="pagination">
+    <li><a href="#">1</a></li>
+</ul>
+
+<ul class="pager">
+  <li><a href="#">Previous</a></li>
+  <li><a href="#">Next</a></li>
+</ul>
+
+
+
+  </div>
+
+
+      </footer>
+
+
+
+
     {% endblock %}

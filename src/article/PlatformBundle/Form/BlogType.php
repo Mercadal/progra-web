@@ -19,7 +19,6 @@ class BlogType extends AbstractType
             ->add('author')
             ->add('blog')
             ->add('file')
-            ->add('image')
             ->add('created')
             ->add('updated')
 

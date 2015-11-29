@@ -20,7 +20,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "leafo/lessphp": "*",
         "twitter/bootstrap": "*",
-        "components/jquery": "dev-master"
+        "components/jquery": "dev-master",
+        "knplabs/knp-paginator-bundle": "dev-master"
 
     },
 

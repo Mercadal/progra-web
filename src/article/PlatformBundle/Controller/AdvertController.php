@@ -38,37 +38,31 @@ class AdvertController extends Controller
   
       public function aboutAction()
     {
-      return $this->render('articlePlatformBundle:Advert:about.html.twig');
+      return $this->render('articlePlatformBundle:Advert:about.html.twig') ;
+
+
+  }
+
+
+    public function listAction(Request $request)
+    {
+
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT index FROM articlePlatformBundle:Blog index";
+        $query = $em->createQuery($dql);
+
+        $article  = $this->get('knp_paginator')->paginate($article,
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
+
+        // parameters to template
+        return $this->render('articlePlatformBundle:Blog:index.html.twig', array('pagination' => $article));
+
     }
 
 
-/*
-  public function preferencesAction (){
-        $usr = $this->getUser();
-            
-        $form = $this->createForm(new BlogType(), $usr);
 
-        if ($this->getRequest()->getMethod() === 'POST') {
-            $form->bindRequest($this->getRequest());
-            if ($form->isValid()) {
-                $em = $this->getDoctrine()->getEntityManager();
-                
-                $usr->uploadProfilePicture();
-                
-                $em->persist($usr);
-                $em->flush();
 
-                $this->redirect($this->generateUrl('articlePlatformBundle_Blog'));
-            }
-        }
-            
-        return $this->render('articlePlatformBundle:views:preferences.html.twig', 
-                array (
-                    'user' => $usr, 
-                    'form' => $form->createView()
-                    )
-                );
-    }
-*/
 
 }

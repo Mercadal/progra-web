@@ -1,14 +1,17 @@
 {% extends '::base.html.twig' %}
 
+{%form_theme form 'bootstrap_3_layout.html.twig'%}
+
+
 {% block body -%}
-    <h1>Blog creation</h1>
+    <h1>Création de l'article</h1>
 
     {{ form(form) }}
 
         <ul class="record_actions">
     <li>
         <a href="{{ path('blog') }}">
-            Back to the list
+            Retour aux articles
         </a>
 
     </li>
