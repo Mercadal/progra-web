@@ -94,7 +94,7 @@ class Blog
         return '/images';
     }
 
-    public function uploadfile()
+    public function uploadProfilePicture()
     {
         $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());
         $this->file = $this->file->getClientOriginalName();
