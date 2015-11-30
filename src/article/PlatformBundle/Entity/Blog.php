@@ -74,32 +74,7 @@ class Blog
 
 
 
-    /**
-     * @Assert\file(maxSize="500k")
-     */
-    public $file;
 
-    public function getWebPath()
-    {
-        return null === $this->file ? null : $this->getUploadDir().'/'.$this->file;
-    }
-
-    protected function getUploadRootDir()
-    {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
-    }
-
-    protected function getUploadDir()
-    {
-        return '/images';
-    }
-
-    public function uploadProfilePicture()
-    {
-        $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());
-        $this->file = $this->file->getClientOriginalName();
-        $this->file = null;
-    }
 
 
 
