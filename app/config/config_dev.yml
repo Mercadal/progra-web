@@ -1,6 +1,7 @@
 imports:
-    - { resource: config.yml }
     - { resource: parameters.yml }
+    - { resource: config.yml }
+
 
 framework:
     router:
