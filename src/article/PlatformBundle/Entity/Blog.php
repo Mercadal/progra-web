@@ -74,20 +74,6 @@ class Blog
 
 
 
-    /**
-     * @Assert\file(maxSize="500k")
-     */
-    public $file;
-
-
-
-
-
-
-
-
-
-
 
 
 
