@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8568613b-752b-4e46-8b34-43bd738c7818" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfonyprograweb" afterPath="$PROJECT_DIR$/symfonyprograweb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/project.iml" afterPath="$PROJECT_DIR$/.idea/project.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Entity/Blog.php" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Entity/Blog.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/index.html.twig" afterPath="$PROJECT_DIR$/src/article/PlatformBundle/Resources/views/Blog/index.html.twig" />
-    </list>
+    <list default="true" id="8568613b-752b-4e46-8b34-43bd738c7818" name="Default" comment="" />
     <ignored path="project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
